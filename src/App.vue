@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <h2>My Playlist</h2>
+      <h2>Befied</h2>
     </header>
     <main>
       <section class>
@@ -11,11 +11,12 @@
         </h2>
         <div class="controls">
           <button class="prev">Prev</button>
-          <button class="play" v-if="!isPlaying">Play</button>
-          <button class="pause" v-else>Pause</button>
+          <button class="play" v-if="!isPlaying" @click="play">Play</button>
+          <button class="pause" v-else @click="pause">Pause</button>
           <button class="next">Next</button>
         </div>
       </section>
+     
     </main>
   </div>
 </template>
@@ -51,11 +52,13 @@ export default {
       }
       this.player.play();
       this.isPlaying = true;
+    },
+    pause() {
+      this.player.pause();
+      this.isPlaying = false;
     }
   },
-  pause() {
-    
-  },
+
   created() {
     this.current = this.songs[this.index];
     this.player.src = this.current.src;
