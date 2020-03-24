@@ -43,6 +43,19 @@ export default {
       player: new Audio()
     };
   },
+  methods: {
+    play(song) {
+      if (typeof song.src != "undefined") {
+        this.current = song;
+        this.player.src = this.current.src;
+      }
+      this.player.play();
+      this.isPlaying = true;
+    }
+  },
+  pause() {
+    
+  },
   created() {
     this.current = this.songs[this.index];
     this.player.src = this.current.src;
