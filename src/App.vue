@@ -78,8 +78,8 @@ export default {
       if (this.index < 0) {
         this.index = this.songs.length - 1;
       }
-      this.current = this.songs[this.index]
-      this.play(this.current)
+      this.current = this.songs[this.index];
+      this.play(this.current);
     }
   },
 
