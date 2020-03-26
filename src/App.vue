@@ -66,16 +66,19 @@ export default {
       this.isPlaying = false;
     },
     next() {
-      console.log(this.current.src);
-      console.log(this.index++);
-
       this.index++;
       if (this.index > this.songs.length - 1) {
         this.index = 0;
       }
-      this.current = <this className="so"></this>n
+      this.current = this.songs[this.index];
+      this.play(this.current);
     },
-    prev() {}
+    prev() {
+      this.index--;
+      if (this.index < 0) {
+        this.index = this.songs.length - 1;
+      }
+    }
   },
 
   created() {
