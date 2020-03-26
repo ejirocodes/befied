@@ -1,4 +1,4 @@
-# befied
+# Befied
 
 ## Project setup
 ```
